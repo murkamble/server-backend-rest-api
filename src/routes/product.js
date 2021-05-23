@@ -8,7 +8,7 @@ const {
     deleteProductById,
     getProducts,
 } = require("../controller/product");
-const { requireSignin, adminMiddleware } = require('../common-middleware/index');
+const { requireSignin, adminMiddleware, uploadS3 } = require('../common-middleware/index');
 const multer = require('multer');
 const shortid = require('shortid');
 const path = require('path');
@@ -28,7 +28,7 @@ router.post(
     '/product/create',
     requireSignin,
     adminMiddleware,
-    upload.array('productPicture'),
+    uploadS3.array('productPicture'),
     createProduct
 );
 
