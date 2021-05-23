@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon src/index.server.js",
-    "start": "concurrently -n 'server' -c 'green' \"npm run server\" "
+    "start": "node src/index.server.js",
+    "server": "concurrently -n 'server' -c 'green' \"npm run server\" "
   },
   "repository": {
     "type": "git",
