@@ -8,8 +8,8 @@ const cors = require('cors')
 // environment variable or you can say constants
 const app = express()
 env.config()
-// app.use(express.json())
-app.use(bodyParser())
+app.use(express.json())
+// app.use(bodyParser())
 app.use(cors())
 
 // mongoose Databases connection string
