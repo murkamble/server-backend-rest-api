@@ -26,8 +26,8 @@ const upload = multer({ storage });
 
 router.post(
     '/product/create',
-    requireSignin,
-    adminMiddleware,
+    // requireSignin,
+    // adminMiddleware,
     uploadS3.array('productPicture'),
     createProduct
 );
