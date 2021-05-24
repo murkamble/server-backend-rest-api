@@ -4,9 +4,12 @@ const slugify = require('slugify');
 const Category = require('../models/category');
 
 exports.createProduct = (req, res) => {
+    console.log('Test Pass 1')
     const {
         name, price, quantity, description, category, createdBy
     } = req.body;
+
+    console.log('Test Pass 2')
 
     let productPictures = [];
     if (req.files.length > 0) {
@@ -25,7 +28,7 @@ exports.createProduct = (req, res) => {
         category,
         createdBy: req.user._id
     });
-
+    console.log('Test Pass 3')
     product.save(((error, product) => {
         if (error) return res.status(400).json({ error });
         if (product) {
